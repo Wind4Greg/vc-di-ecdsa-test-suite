@@ -10,7 +10,7 @@ import {endpoints} from 'vc-test-suite-implementations';
 import {issuerName} from './test-config.js';
 import {validVc as vc} from './mock-data.js';
 
-const tag = 'ecdsa-rdfc-2019';
+const tag = 'localServer'; // 'ecdsa-rdfc-2019';
 // only use implementations with `ecdsa-rdfc-2019` verifiers.
 const {match} = endpoints.filterByTag({
   tags: [tag],

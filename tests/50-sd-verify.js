@@ -12,7 +12,7 @@ import {
 import {endpoints} from 'vc-test-suite-implementations';
 import {klona} from 'klona';
 
-const tag = 'ecdsa-sd-2023';
+const tag = 'localServer'; // 'ecdsa-sd-2023';
 // only use implementations with `ecdsa-sd-2023` verifiers.
 const {match} = endpoints.filterByTag({
   tags: [tag],

@@ -6,7 +6,7 @@ import {endpoints} from 'vc-test-suite-implementations';
 import {validVc as vc} from './mock-data.js';
 import {verificationSuccess} from './assertions.js';
 
-const tag = 'ecdsa-rdfc-2019';
+const tag = 'localServer'; // 'ecdsa-rdfc-2019';
 
 // only use implementations with `ecdsa-rdfc-2019` issuers.
 const {

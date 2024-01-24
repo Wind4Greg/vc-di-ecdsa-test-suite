@@ -13,7 +13,7 @@ import {documentLoader} from './documentLoader.js';
 import {endpoints} from 'vc-test-suite-implementations';
 import {validVc as vc} from './mock-data.js';
 
-const tag = 'ecdsa-rdfc-2019';
+const tag = 'localServer'; // 'ecdsa-rdfc-2019';
 const {match} = endpoints.filterByTag({
   tags: [tag],
   property: 'issuers'

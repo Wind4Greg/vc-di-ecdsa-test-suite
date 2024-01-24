@@ -17,4 +17,3 @@ reports/**
 !.gitkeep
 credentials/*.json
 .vscode
-.localImplementationsConfig.cjs

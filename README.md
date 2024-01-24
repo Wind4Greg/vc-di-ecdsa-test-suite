@@ -4,6 +4,7 @@
 
 - [ECDSA Cryptosuite test suite](#ecdsa-cryptosuite-test-suite)
   - [Table of Contents](#table-of-contents)
+  - [Fork Background](#fork-background)
   - [Background](#background)
   - [Install](#install)
   - [Usage](#usage)
@@ -12,7 +13,26 @@
   - [Contribute](#contribute)
   - [License](#license)
 
+## Fork Background
+
+This fork of the ECDSA Cryptosuite test suite shows how I modified things to use the test suite for local implementation testing. For example the `.localImplementationsConfig.cjs` is included along with changes to the test files to only run local tests.
+
+I'm currently working on ECDSA-SD tests and I only want to run a single batch of tests at a time. To do that I run `mocha` with a particular test file. For example for ECDSA-SD creation tests I use the command:
+
+`npx mocha tests/40-sd-create.js`
+
+or for the ECDSA-SD verification tests I use the command:
+
+`npx mocha tests/50-sd-verify.js`
+
+Note that I don't use the  `npm test` script (see `package.json`) as it runs all the tests, including, interoperability tests and it also prepares a full interoperability report which is not my goal in testing locally.
+
+The `.localImplementationsConfig.cjs` is where you configure your server that is under test. This is a regular JavaScript file so I defined an extra variable `let localServerPrefix = "http://127.0.0.2:5555";` to make it easy to change the *endpoints* of my very simple test server.
+
+The rest of this README.md is from the original as of the time of last fork update.
+
 ## Background
+
 Provides interoperability tests for verifiable credential processors
 (issuers and verifiers) that support [ECDSA](https://www.w3.org/TR/vc-di-ecdsa/)
 [Data Integrity](https://www.w3.org/TR/vc-data-integrity/) cryptosuites.
