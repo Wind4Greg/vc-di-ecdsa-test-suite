@@ -5,6 +5,7 @@
 - [ECDSA Cryptosuite test suite](#ecdsa-cryptosuite-test-suite)
   - [Table of Contents](#table-of-contents)
   - [Fork Background](#fork-background)
+    - [Gotcha: Context Injection](#gotcha-context-injection)
   - [Background](#background)
   - [Install](#install)
   - [Usage](#usage)
@@ -30,6 +31,13 @@ Note that I don't use the  `npm test` script (see `package.json`) as it runs all
 The `.localImplementationsConfig.cjs` is where you configure your server that is under test. This is a regular JavaScript file so I defined an extra variable `let localServerPrefix = "http://127.0.0.2:5555";` to make it easy to change the *endpoints* of my very simple test server.
 
 The rest of this README.md is from the original as of the time of last fork update.
+
+### Gotcha: Context Injection
+
+I created the test vectors for many of the VC data integrity documents. When I did so I used the nice new data model context, i.e., "https://www.w3.org/ns/credentials/v2". This includes all the needed VC data integrity context stuff.
+
+However, the tests use the older data model context, i.e., "https://www.w3.org/2018/credentials/v1", hence you need to do what is called "context injection" as explained here:
+[VC Data Integrity: Context Injection](https://w3c.github.io/vc-data-integrity/#context-injection), before processing the credential. This basically involves adding "https://w3id.org/security/data-integrity/v2" to the unsigned credentials context array.
 
 ## Background
 
