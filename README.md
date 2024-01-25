@@ -39,6 +39,7 @@ I created the test vectors for many of the VC data integrity documents. When I d
 However, the tests use the older data model context, i.e., "https://www.w3.org/2018/credentials/v1", hence you need to do what is called "context injection" as explained here:
 [VC Data Integrity: Context Injection](https://w3c.github.io/vc-data-integrity/#context-injection), before processing the credential. This basically involves adding "https://w3id.org/security/data-integrity/v2" to the unsigned credentials context array.
 
+
 ## Background
 
 Provides interoperability tests for verifiable credential processors
