@@ -32,6 +32,25 @@ The `.localImplementationsConfig.cjs` is where you configure your server that is
 
 The rest of this README.md is from the original as of the time of last fork update.
 
+```json
+{
+    "name": "Grotto Networking",
+    "implementation": "Grotto Test",
+    "issuers": [{
+      "id": "",
+      "endpoint": "https://ecdsa-sd.grotto-networking.com/credentials/issue",
+      "tags": ["ecdsa-sd-2023"],
+      "supportedEcdsaKeyTypes": ["P-256"]
+    }],
+    "verifiers": [{
+      "id": "",
+      "endpoint": "https://ecdsa-sd.grotto-networking.com/credentials/verify",
+      "tags": ["ecdsa-sd-2023"],
+      "supportedEcdsaKeyTypes": ["P-256"]
+    }]
+  }
+  ```
+
 ### Gotcha: Context Injection
 
 I created the test vectors for many of the VC data integrity documents. When I did so I used the nice new data model context, i.e., "https://www.w3.org/ns/credentials/v2". This includes all the needed VC data integrity context stuff.

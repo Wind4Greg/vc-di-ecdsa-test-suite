@@ -7,7 +7,7 @@ import {holderName} from './test-config.js';
 import {validVc as vc} from './mock-data.js';
 import {verificationSuccess} from './assertions.js';
 
-const tag = 'localServer'; // 'ecdsa-sd-2023';
+const tag = 'ecdsa-sd-2023'; //'localServer'; // 'ecdsa-sd-2023';
 
 // only use implementations with `ecdsa-sd-2023` issuers.
 const {
